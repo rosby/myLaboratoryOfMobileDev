@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../const.dart';
 import '../localization/localization_configurator.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -23,25 +24,43 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Flexible(
-              child: Container(
-                child: Text(localization.welcomeText),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                child: Center(
+                  child: Text(
+                    localization.welcomeText,
+                    style: const TextStyle(fontSize: 24),
+                  ),
+                ),
+                height: 100,
               ),
-              flex: 4,
-            ),
-            Flexible(
-              flex: 2,
-              child: Center(
+              Container(
+                height: 380,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: Image.asset(Const.startScreenImagePath).image)),
+              ),
+              Container(
+                padding: const EdgeInsets.only(top: 50),
                 child: ElevatedButton(
                   child: Text(localization.enterButtonText),
                   style: buttonStyle,
                   onPressed: () {},
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(localization.byName),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

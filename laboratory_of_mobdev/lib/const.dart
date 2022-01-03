@@ -1,1 +1,4 @@
-class Const {}
+class Const {
+  static String startScreenImagePath =
+      'assets/images/iconSecondStartScreen.png';
+}
