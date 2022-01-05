@@ -27,45 +27,45 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 45,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Center(
-                  child: Text(
-                    localization.welcomeText,
-                    style: const TextStyle(
-                      fontSize: 24,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: const Alignment(0, 0.4),
+                    child: Text(
+                      localization.welcomeText,
+                      style: const TextStyle(
+                        fontSize: 24,
+                      ),
                     ),
                   ),
-                ),
-                height: 100,
+                  Align(
+                      alignment: const Alignment(0, -0.9),
+                      child: Image.asset(
+                        Const.startScreenImagePath,
+                        width: 300,
+                        height: 300,
+                      )),
+                  Align(
+                    alignment: const Alignment(0, 0.8),
+                    child: ElevatedButton(
+                      child: Text(localization.enterButtonText),
+                      style: buttonStyle,
+                      onPressed: () {},
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(localization.byName),
+                  ),
+                ],
               ),
-              Container(
-                height: 380,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: Image.asset(Const.startScreenImagePath).image)),
-              ),
-              Container(
-                padding: const EdgeInsets.only(top: 50),
-                child: ElevatedButton(
-                  child: Text(localization.enterButtonText),
-                  style: buttonStyle,
-                  onPressed: () {},
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(localization.byName),
-                  ],
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
