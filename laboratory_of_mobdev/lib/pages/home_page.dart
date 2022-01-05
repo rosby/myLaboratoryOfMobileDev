@@ -22,9 +22,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 45,
+        ),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -32,7 +35,9 @@ class MyHomePage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     localization.welcomeText,
-                    style: const TextStyle(fontSize: 24),
+                    style: const TextStyle(
+                      fontSize: 24,
+                    ),
                   ),
                 ),
                 height: 100,

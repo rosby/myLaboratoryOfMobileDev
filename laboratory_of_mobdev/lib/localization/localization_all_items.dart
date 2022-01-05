@@ -7,11 +7,13 @@ class AllItemsOfLocalization {
 
   final LocalizationItem _english = LocalizationItem(
       language: 'en_US',
+      fontFamily: 'Quicksand-Bold',
       welcomeText: 'Welcome to laboratory\n         of MobileDev',
       enterButtonText: 'Enter');
   final LocalizationItem _russian = LocalizationItem(
       language: 'ru_RU',
+      fontFamily: 'Comfortaa-Bold',
       welcomeText:
-          'Добро пожаловать в лабораторию\n           мобильной разработки',
+          '      Добро пожаловать\n         в лабораторию\n  мобильной разработки',
       enterButtonText: 'Войти');
 }
