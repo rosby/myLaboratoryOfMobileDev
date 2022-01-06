@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laboratory_of_mobdev/localization/localization_configurator.dart';
+import 'package:laboratory_of_mobdev/pages/weather_page.dart';
 
 import 'pages/home_page.dart';
 
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        fontFamily: LocalizationConfig.currentLang().fontFamily,
       ),
+      //home: MyHomePage(),
       home: MyHomePage(),
     );
   }

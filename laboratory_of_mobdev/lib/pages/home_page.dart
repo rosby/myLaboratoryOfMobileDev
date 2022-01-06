@@ -9,14 +9,17 @@ class MyHomePage extends StatelessWidget {
   final localization = LocalizationConfig.currentLang();
 
   final buttonStyle = ButtonStyle(
+    elevation: MaterialStateProperty.all(1),
     shape: MaterialStateProperty.all(
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(11),
+      ),
     ),
     textStyle: MaterialStateProperty.all(
       const TextStyle(fontSize: 20),
     ),
     padding: MaterialStateProperty.all(
-      const EdgeInsets.symmetric(vertical: 15, horizontal: 60),
+      const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
     ),
   );
 
@@ -25,7 +28,24 @@ class MyHomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 45,
+          centerTitle: true,
+          toolbarHeight: 70,
+          backgroundColor: Colors.white,
+          elevation: 0,
+          title: Image.asset(
+            'assets/images/logo2.png',
+            width: 36,
+            height: 36,
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(
+                Icons.more_horiz,
+                color: Colors.black,
+              ),
+              onPressed: () {},
+            ),
+          ],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,7 +55,7 @@ class MyHomePage extends StatelessWidget {
               child: Stack(
                 children: [
                   Align(
-                    alignment: const Alignment(0, 0.4),
+                    alignment: const Alignment(0, 0.2),
                     child: Text(
                       localization.welcomeText,
                       style: const TextStyle(
@@ -51,7 +71,7 @@ class MyHomePage extends StatelessWidget {
                         height: 300,
                       )),
                   Align(
-                    alignment: const Alignment(0, 0.8),
+                    alignment: const Alignment(0, 0.7),
                     child: ElevatedButton(
                       child: Text(localization.enterButtonText),
                       style: buttonStyle,
