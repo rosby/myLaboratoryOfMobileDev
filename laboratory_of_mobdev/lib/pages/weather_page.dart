@@ -1,12 +1,16 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class WeatherPage extends StatelessWidget {
+  const WeatherPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    RouteSettings settings = ModalRoute.of(context)!.settings;
+
+    var a = settings.arguments;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -16,7 +20,9 @@ class WeatherPage extends StatelessWidget {
             icon: const Icon(
               Icons.menu,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context, '111');
+            },
           ),
           actions: [
             IconButton(

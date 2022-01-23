@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:laboratory_of_mobdev/models/user.dart';
+import 'package:laboratory_of_mobdev/pages/weather_page.dart';
 
 import '../const.dart';
 import '../localization/localization_configurator.dart';
@@ -75,7 +77,15 @@ class MyHomePage extends StatelessWidget {
                     child: ElevatedButton(
                       child: Text(localization.enterButtonText),
                       style: buttonStyle,
-                      onPressed: () {},
+                      onPressed: () async {
+                        User user = User(
+                          displayName: 'Даниил',
+                          age: 23,
+                        );
+                        final data = await Navigator.pushNamed(
+                            context, Routes.weatherPage,
+                            arguments: [user]);
+                      },
                     ),
                   ),
                   Align(

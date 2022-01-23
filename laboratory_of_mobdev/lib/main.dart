@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laboratory_of_mobdev/const.dart';
 import 'package:laboratory_of_mobdev/localization/localization_configurator.dart';
 import 'package:laboratory_of_mobdev/pages/weather_page.dart';
 
@@ -20,12 +21,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        Routes.welcomePage: (context) => MyHomePage(),
+        Routes.weatherPage: (context) => const WeatherPage(),
+      },
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      //home: MyHomePage(),
       home: MyHomePage(),
     );
   }

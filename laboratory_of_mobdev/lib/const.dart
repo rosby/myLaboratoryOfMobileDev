@@ -1,8 +1,9 @@
-import 'package:laboratory_of_mobdev/localization/localization_configurator.dart';
-
-import 'localization/localization_item.dart';
-
 class Const {
   static String startScreenImagePath =
       'assets/images/iconSecondStartScreen.png';
+}
+
+class Routes {
+  static String welcomePage = '/welcomePage';
+  static String weatherPage = '/weatherPage';
 }
